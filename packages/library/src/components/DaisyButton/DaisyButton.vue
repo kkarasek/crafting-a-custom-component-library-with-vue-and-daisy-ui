@@ -3,9 +3,10 @@ import { computed, defineProps } from 'vue';
 
 import { ColorsBrand, ColorsState } from '../../globals/colors';
 
-
+// withDefauts()
 const props = defineProps<{
   color: ColorsBrand | ColorsState | 'ghost' | 'link';
+  outline?: boolean;
 }>();
 
 const colorClass = computed(() => {
@@ -23,8 +24,16 @@ const colorClass = computed(() => {
     error: 'btn-error',
   }[props.color];
 });
+
+const outlineClass = computed(() => {
+  return props.outline ? 'btn-outline' : '';
+});
+
+const buttonClasses = computed(() => {
+  return `${colorClass.value} ${outlineClass.value}`;
+});
 </script>
 
 <template>
-  <button class="btn" :class="colorClass"><slot></slot></button>
+  <button class="btn" :class="buttonClasses"><slot></slot></button>
 </template>

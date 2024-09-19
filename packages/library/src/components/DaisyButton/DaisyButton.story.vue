@@ -5,7 +5,8 @@ import { colorsBrand, colorsState } from '../../globals/colors';
 import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
 
 const state = reactive({
-  disabled: false
+  disabled: false,
+  outline: false
 });
 </script>
 <template>
@@ -15,11 +16,12 @@ const state = reactive({
       :key="color"
       :title="capitalizeFirstLetter(color)"
     >
-      <DaisyButton :color="color" :disabled="state.disabled">Click Me ✨</DaisyButton>
+      <DaisyButton :color="color" :disabled="state.disabled" :outline="state.outline">Click Me ✨</DaisyButton>
     </Variant>
 
     <template #controls>
       <HstCheckbox v-model="state.disabled" title="Disabled" />
+      <HstCheckbox v-model="state.outline" title="Outline" />
     </template>
   </Story>
 </template>
