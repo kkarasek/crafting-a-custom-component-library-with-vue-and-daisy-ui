@@ -1,0 +1,14 @@
+# docs
+
+## 1.6.0
+
+### Minor Changes
+
+- d383a4f: feature: button component
+- e5530a7: feature: Browser Mockup component
+
+### Patch Changes
+
+- Updated dependencies [d383a4f]
+- Updated dependencies [e5530a7]
+  - daisy-vue@1.7.0
